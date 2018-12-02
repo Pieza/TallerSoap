@@ -19,11 +19,13 @@ public class AddForm extends javax.swing.JFrame {
 
     FormFactory formFactory;
     FormObj formObj;
+    String username;
     
-    public AddForm() {
+    public AddForm(String username) {
         initComponents();
         this.formFactory = new FormFactory();
         this.formObj = new FormObj();
+        this.username = username;
     }
 
     /**
@@ -112,10 +114,10 @@ public class AddForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         formObj.setTitle(jTextField1.getText());
         
-        formFactory.createForm(formObj);
+        formFactory.createForm(username,formObj);
         
         
-        new Menu().show();
+        new Menu(username).show();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

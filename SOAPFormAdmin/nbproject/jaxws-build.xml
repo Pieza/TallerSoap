@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/Form"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/soapformadmin"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Form"/>
+    <target name="wsimport-client-User" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/User"/>
+        <property name="wsdl-User" location="xml-resources/web-service-references/User/wsdl/localhost_8084/SOAPForm/User.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/User" destdir="${build.generated.dir}/jax-wsCache/User" wsdl="${wsdl-User}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/SOAPForm/User?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-User}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/User"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/User">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-User" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/User"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/userapi"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Form, wsimport-client-User"/>
 </project>

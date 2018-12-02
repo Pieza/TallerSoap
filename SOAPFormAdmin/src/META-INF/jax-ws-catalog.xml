@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8084/SOAPForm/Form?wsdl" uri="wsdl/localhost_8084/SOAPForm/Form.wsdl"/>
     <system systemId="http://localhost:8084/SOAPForm/Form?xsd=1" uri="wsdl/localhost_8084/SOAPForm/Form.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/SOAPForm/User?wsdl" uri="wsdl/localhost_8084/SOAPForm/User.wsdl"/>
+    <system systemId="http://localhost:8084/SOAPForm/User?xsd=1" uri="wsdl/localhost_8084/SOAPForm/User.xsd_1.xsd"/>
 </catalog>

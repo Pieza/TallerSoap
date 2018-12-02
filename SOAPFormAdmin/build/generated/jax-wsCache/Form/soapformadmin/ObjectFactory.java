@@ -24,12 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetAll_QNAME = new QName("http://formAPI/", "getAll");
-    private final static QName _GetAllResponse_QNAME = new QName("http://formAPI/", "getAllResponse");
-    private final static QName _GetResponse_QNAME = new QName("http://formAPI/", "getResponse");
-    private final static QName _Get_QNAME = new QName("http://formAPI/", "get");
-    private final static QName _Create_QNAME = new QName("http://formAPI/", "create");
-    private final static QName _CreateResponse_QNAME = new QName("http://formAPI/", "createResponse");
+    private final static QName _Add_QNAME = new QName("http://formAPI/", "add");
+    private final static QName _AddResponse_QNAME = new QName("http://formAPI/", "addResponse");
+    private final static QName _GetFormsByUsernameResponse_QNAME = new QName("http://formAPI/", "getFormsByUsernameResponse");
+    private final static QName _GetFormsByUsername_QNAME = new QName("http://formAPI/", "getFormsByUsername");
+    private final static QName _AnswerForm_QNAME = new QName("http://formAPI/", "answerForm");
+    private final static QName _AnswerFormResponse_QNAME = new QName("http://formAPI/", "answerFormResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: soapformadmin
@@ -39,51 +39,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAll }
+     * Create an instance of {@link Add }
      * 
      */
-    public GetAll createGetAll() {
-        return new GetAll();
+    public Add createAdd() {
+        return new Add();
     }
 
     /**
-     * Create an instance of {@link GetAllResponse }
+     * Create an instance of {@link AddResponse }
      * 
      */
-    public GetAllResponse createGetAllResponse() {
-        return new GetAllResponse();
+    public AddResponse createAddResponse() {
+        return new AddResponse();
     }
 
     /**
-     * Create an instance of {@link GetResponse }
+     * Create an instance of {@link GetFormsByUsernameResponse }
      * 
      */
-    public GetResponse createGetResponse() {
-        return new GetResponse();
+    public GetFormsByUsernameResponse createGetFormsByUsernameResponse() {
+        return new GetFormsByUsernameResponse();
     }
 
     /**
-     * Create an instance of {@link Get }
+     * Create an instance of {@link GetFormsByUsername }
      * 
      */
-    public Get createGet() {
-        return new Get();
+    public GetFormsByUsername createGetFormsByUsername() {
+        return new GetFormsByUsername();
     }
 
     /**
-     * Create an instance of {@link Create }
+     * Create an instance of {@link AnswerForm }
      * 
      */
-    public Create createCreate() {
-        return new Create();
+    public AnswerForm createAnswerForm() {
+        return new AnswerForm();
     }
 
     /**
-     * Create an instance of {@link CreateResponse }
+     * Create an instance of {@link AnswerFormResponse }
      * 
      */
-    public CreateResponse createCreateResponse() {
-        return new CreateResponse();
+    public AnswerFormResponse createAnswerFormResponse() {
+        return new AnswerFormResponse();
+    }
+
+    /**
+     * Create an instance of {@link QuestionObj }
+     * 
+     */
+    public QuestionObj createQuestionObj() {
+        return new QuestionObj();
+    }
+
+    /**
+     * Create an instance of {@link AnswerObj }
+     * 
+     */
+    public AnswerObj createAnswerObj() {
+        return new AnswerObj();
     }
 
     /**
@@ -95,57 +111,57 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAll }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Add }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "getAll")
-    public JAXBElement<GetAll> createGetAll(GetAll value) {
-        return new JAXBElement<GetAll>(_GetAll_QNAME, GetAll.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "add")
+    public JAXBElement<Add> createAdd(Add value) {
+        return new JAXBElement<Add>(_Add_QNAME, Add.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "getAllResponse")
-    public JAXBElement<GetAllResponse> createGetAllResponse(GetAllResponse value) {
-        return new JAXBElement<GetAllResponse>(_GetAllResponse_QNAME, GetAllResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "addResponse")
+    public JAXBElement<AddResponse> createAddResponse(AddResponse value) {
+        return new JAXBElement<AddResponse>(_AddResponse_QNAME, AddResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFormsByUsernameResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "getResponse")
-    public JAXBElement<GetResponse> createGetResponse(GetResponse value) {
-        return new JAXBElement<GetResponse>(_GetResponse_QNAME, GetResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "getFormsByUsernameResponse")
+    public JAXBElement<GetFormsByUsernameResponse> createGetFormsByUsernameResponse(GetFormsByUsernameResponse value) {
+        return new JAXBElement<GetFormsByUsernameResponse>(_GetFormsByUsernameResponse_QNAME, GetFormsByUsernameResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFormsByUsername }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "get")
-    public JAXBElement<Get> createGet(Get value) {
-        return new JAXBElement<Get>(_Get_QNAME, Get.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "getFormsByUsername")
+    public JAXBElement<GetFormsByUsername> createGetFormsByUsername(GetFormsByUsername value) {
+        return new JAXBElement<GetFormsByUsername>(_GetFormsByUsername_QNAME, GetFormsByUsername.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Create }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AnswerForm }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "create")
-    public JAXBElement<Create> createCreate(Create value) {
-        return new JAXBElement<Create>(_Create_QNAME, Create.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "answerForm")
+    public JAXBElement<AnswerForm> createAnswerForm(AnswerForm value) {
+        return new JAXBElement<AnswerForm>(_AnswerForm_QNAME, AnswerForm.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CreateResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AnswerFormResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://formAPI/", name = "createResponse")
-    public JAXBElement<CreateResponse> createCreateResponse(CreateResponse value) {
-        return new JAXBElement<CreateResponse>(_CreateResponse_QNAME, CreateResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://formAPI/", name = "answerFormResponse")
+    public JAXBElement<AnswerFormResponse> createAnswerFormResponse(AnswerFormResponse value) {
+        return new JAXBElement<AnswerFormResponse>(_AnswerFormResponse_QNAME, AnswerFormResponse.class, null, value);
     }
 
 }

@@ -4,41 +4,41 @@
 <xsd:import namespace="http://formAPI/" schemaLocation="http://localhost:8084/SOAPForm/Form?xsd=1" />
 </xsd:schema>
 </types>
-<message name="get">
-<part name="parameters" element="tns:get" />
+<message name="add">
+<part name="parameters" element="tns:add" />
 </message>
-<message name="getResponse">
-<part name="parameters" element="tns:getResponse" />
+<message name="addResponse">
+<part name="parameters" element="tns:addResponse" />
 </message>
-<message name="create">
-<part name="parameters" element="tns:create" />
+<message name="getFormsByUsername">
+<part name="parameters" element="tns:getFormsByUsername" />
 </message>
-<message name="createResponse">
-<part name="parameters" element="tns:createResponse" />
+<message name="getFormsByUsernameResponse">
+<part name="parameters" element="tns:getFormsByUsernameResponse" />
 </message>
-<message name="getAll">
-<part name="parameters" element="tns:getAll" />
+<message name="answerForm">
+<part name="parameters" element="tns:answerForm" />
 </message>
-<message name="getAllResponse">
-<part name="parameters" element="tns:getAllResponse" />
+<message name="answerFormResponse">
+<part name="parameters" element="tns:answerFormResponse" />
 </message>
 <portType name="Form">
-<operation name="get">
-<input wsam:Action="http://formAPI/Form/getRequest" message="tns:get" />
-<output wsam:Action="http://formAPI/Form/getResponse" message="tns:getResponse" />
+<operation name="add">
+<input wsam:Action="http://formAPI/Form/addRequest" message="tns:add" />
+<output wsam:Action="http://formAPI/Form/addResponse" message="tns:addResponse" />
 </operation>
-<operation name="create">
-<input wsam:Action="http://formAPI/Form/createRequest" message="tns:create" />
-<output wsam:Action="http://formAPI/Form/createResponse" message="tns:createResponse" />
+<operation name="getFormsByUsername">
+<input wsam:Action="http://formAPI/Form/getFormsByUsernameRequest" message="tns:getFormsByUsername" />
+<output wsam:Action="http://formAPI/Form/getFormsByUsernameResponse" message="tns:getFormsByUsernameResponse" />
 </operation>
-<operation name="getAll">
-<input wsam:Action="http://formAPI/Form/getAllRequest" message="tns:getAll" />
-<output wsam:Action="http://formAPI/Form/getAllResponse" message="tns:getAllResponse" />
+<operation name="answerForm">
+<input wsam:Action="http://formAPI/Form/answerFormRequest" message="tns:answerForm" />
+<output wsam:Action="http://formAPI/Form/answerFormResponse" message="tns:answerFormResponse" />
 </operation>
 </portType>
 <binding name="FormPortBinding" type="tns:Form">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="get">
+<operation name="add">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -47,7 +47,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="create">
+<operation name="getFormsByUsername">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -56,7 +56,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="getAll">
+<operation name="answerForm">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

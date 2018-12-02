@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://userAPI/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://userAPI/">
+
+<xs:element name="getUser" type="tns:getUser" />
+
+<xs:element name="getUserResponse" type="tns:getUserResponse" />
+
+<xs:element name="register" type="tns:register" />
+
+<xs:element name="registerResponse" type="tns:registerResponse" />
+
+<xs:complexType name="register">
+<xs:sequence>
+<xs:element name="user" type="tns:userObj" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userObj">
+<xs:sequence>
+<xs:element name="forms" type="tns:formObj" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="type" type="xs:string" minOccurs="0" />
+<xs:element name="username" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="formObj">
+<xs:sequence>
+<xs:element name="questions" type="tns:questionObj" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="title" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="questionObj">
+<xs:sequence>
+<xs:element name="posibleAnswers" type="tns:answerObj" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="question" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="answerObj">
+<xs:sequence>
+<xs:element name="answer" type="xs:string" minOccurs="0" />
+<xs:element name="chooseCount" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userObj" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

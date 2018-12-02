@@ -22,8 +22,13 @@ public class User {
      * This is a sample web service operation
      */
     @WebMethod(operationName = "register")
-    public String hello(@WebParam(name = "name") UserObj user) {
+    public String register(@WebParam(name = "user") UserObj user) {
         DataBase.users.add(user);
         return "Success";
+    }
+    
+    @WebMethod(operationName = "getUser")
+    public UserObj getUser(@WebParam(name = "username") String username) {
+        return DataBase.getUserByUsername(username);
     }
 }
