@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://formAPI/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://formAPI/">
+
+<xs:element name="create" type="tns:create" />
+
+<xs:element name="createResponse" type="tns:createResponse" />
+
+<xs:element name="get" type="tns:get" />
+
+<xs:element name="getAll" type="tns:getAll" />
+
+<xs:element name="getAllResponse" type="tns:getAllResponse" />
+
+<xs:element name="getResponse" type="tns:getResponse" />
+
+<xs:complexType name="create">
+<xs:sequence>
+<xs:element name="form" type="tns:formObj" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="formObj">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="get">
+<xs:sequence>
+<xs:element name="formId" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:formObj" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAll">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:formObj" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
