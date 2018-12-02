@@ -2,6 +2,7 @@ package formAPI;
 
 import CodeBase.data.DataBase;
 import CodeBase.models.FormObj;
+import CodeBase.models.QuestionObj;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -14,29 +15,24 @@ import javax.jws.WebParam;
 @WebService(serviceName = "Form")
 public class Form {
 
-    /**
-     * This is a sample web service operation
-     * @param form form
-     * @return status msg
-     */
-    @WebMethod(operationName = "create")
-    public String create(@WebParam(name = "form") FormObj form) {
-        DataBase.forms.add(form);
+
+    @WebMethod(operationName = "add")
+    public String add(@WebParam(name = "username") String username,
+            @WebParam(name = "form") FormObj form) {
+        DataBase.getUserByUsername(username).addForm(form);
         return "Success";
     }
     
-    /**
-     * This is a sample web service operation
-     * @param formId id
-     * @return a form
-     */
-    @WebMethod(operationName = "get")
-    public FormObj get(@WebParam(name = "formId") int formId) {     
-        return DataBase.forms.get(formId);
+    @WebMethod(operationName = "getFormsByUsername")
+    public List<FormObj> getFormsByUsername(@WebParam(name = "username") String username) {     
+        return DataBase.getFormsByUsername(username);
     }
     
-    @WebMethod(operationName = "getAll")
-    public List<FormObj> getAll() {     
-        return DataBase.forms;
+    @WebMethod(operationName = "answerForm")
+    public String answerForm(@WebParam(name = "username") String username,
+            @WebParam(name = "id") int id,
+            @WebParam(name = "answers") List<QuestionObj> questions) {    
+        DataBase.getFormsByUsername(username).get(id).setQuestions(questions);
+        return "Success";
     }
 }

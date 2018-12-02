@@ -28,5 +28,15 @@ public class FormObj {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public List<QuestionObj> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<QuestionObj> questions) {
+        this.questions = questions;
+    }
+    
+    
     
 }
