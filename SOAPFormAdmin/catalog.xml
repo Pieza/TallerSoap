@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8084/SOAPForm/Form?wsdl" uri="xml-resources/web-service-references/Form/wsdl/localhost_8084/SOAPForm/Form.wsdl"/>
-    <system systemId="http://localhost:8084/SOAPForm/Form?xsd=1" uri="xml-resources/web-service-references/Form/wsdl/localhost_8084/SOAPForm/Form.xsd_1.xsd"/>
     <system systemId="http://localhost:8084/SOAPForm/User?wsdl" uri="xml-resources/web-service-references/User/wsdl/localhost_8084/SOAPForm/User.wsdl"/>
     <system systemId="http://localhost:8084/SOAPForm/User?xsd=1" uri="xml-resources/web-service-references/User/wsdl/localhost_8084/SOAPForm/User.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/SOAPForm/Form?wsdl" uri="xml-resources/web-service-references/Form/wsdl/localhost_8084/SOAPForm/Form.wsdl"/>
+    <system systemId="http://localhost:8084/SOAPForm/Form?xsd=1" uri="xml-resources/web-service-references/Form/wsdl/localhost_8084/SOAPForm/Form.xsd_1.xsd"/>
 </catalog>

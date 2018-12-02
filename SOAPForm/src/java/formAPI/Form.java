@@ -1,7 +1,7 @@
 package formAPI;
 
 import CodeBase.data.DataBase;
-import CodeBase.models.FormObj;
+import CodeBase.models.*;
 import CodeBase.models.QuestionObj;
 import java.util.List;
 import javax.jws.WebService;

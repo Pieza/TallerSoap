@@ -7,8 +7,10 @@ package soapformadmin.UI;
 
 import javax.swing.JOptionPane;
 import soapformadmin.APIBase.FormFactory;
+import soapformadmin.AnswerObj;
 //import soapformadmin.AnswerObj;
 import soapformadmin.FormObj;
+import soapformadmin.QuestionObj;
 //import soapformadmin.QuestionObj;
 
 /**
@@ -86,7 +88,7 @@ public class AddForm extends javax.swing.JFrame {
                         .addGap(143, 143, 143)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
+                        .addGap(101, 101, 101)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -101,9 +103,9 @@ public class AddForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(qCounter))
-                .addGap(40, 40, 40)
+                .addGap(45, 45, 45)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(58, 58, 58))
         );
@@ -122,14 +124,18 @@ public class AddForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //QuestionObj question = new QuestionObj();
-        //question.setQuestion(JOptionPane.showInputDialog("Digite la pregunta"));
+        QuestionObj question = new QuestionObj();
+        question.setQuestion(JOptionPane.showInputDialog("Digite la pregunta"));
         for(int i = 0; i < 4; i++){
-            //AnswerObj answer = new AnswerObj();
-            //answer.setChooseCount(0);
-           // answer.setAnswer(JOptionPane.showInputDialog("Respuesta " + i +1));
-            //question.posibleAnswers.addAnswer(answer);
+            AnswerObj answer = new AnswerObj();
+            answer.setChooseCount(0);
+            answer.setAnswer(JOptionPane.showInputDialog("Respuesta " + i +1));
+            question.getPosibleAnswers().add(answer);
         }
+    
+        this.formObj.getQuestions().add(question);
+        this.formObj.setTitle(jTextField1.getText());
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

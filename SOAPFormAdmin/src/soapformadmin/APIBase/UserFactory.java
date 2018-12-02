@@ -1,6 +1,7 @@
 package soapformadmin.APIBase;
 
 import userapi.User;
+import userapi.UserObj;
 import userapi.User_Service;
 
 /**
@@ -14,5 +15,11 @@ public class UserFactory {
         user = new User_Service().getUserPort();
     }
     
+    public UserObj getUser(String username){
+        return user.getUser(username);
+    }
     
+    public String register(UserObj userObj){
+        return user.register(userObj);
+    }
 }
