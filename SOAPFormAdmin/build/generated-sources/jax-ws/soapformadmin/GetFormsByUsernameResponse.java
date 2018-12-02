@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para getAllResponse complex type.
+ * <p>Clase Java para getFormsByUsernameResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="getAllResponse">
+ * &lt;complexType name="getFormsByUsernameResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -29,10 +29,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getAllResponse", propOrder = {
+@XmlType(name = "getFormsByUsernameResponse", propOrder = {
     "_return"
 })
-public class GetAllResponse {
+public class GetFormsByUsernameResponse {
 
     @XmlElement(name = "return")
     protected List<FormObj> _return;

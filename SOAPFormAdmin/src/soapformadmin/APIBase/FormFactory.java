@@ -15,9 +15,9 @@ public class FormFactory {
         form = new Form_Service().getFormPort();
     }
     
-    public String createForm(FormObj formObj)
+    public String createForm(String username,FormObj formObj)
     {
-        return form.create(formObj);
+        return form.add(username,formObj);
     }
     
 }

@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para create complex type.
+ * <p>Clase Java para getFormsByUsername complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="create">
+ * &lt;complexType name="getFormsByUsername">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="form" type="{http://formAPI/}formObj" minOccurs="0"/>
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "create", propOrder = {
-    "form"
+@XmlType(name = "getFormsByUsername", propOrder = {
+    "username"
 })
-public class Create {
+public class GetFormsByUsername {
 
-    protected FormObj form;
+    protected String username;
 
     /**
-     * Obtiene el valor de la propiedad form.
+     * Obtiene el valor de la propiedad username.
      * 
      * @return
      *     possible object is
-     *     {@link FormObj }
+     *     {@link String }
      *     
      */
-    public FormObj getForm() {
-        return form;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * Define el valor de la propiedad form.
+     * Define el valor de la propiedad username.
      * 
      * @param value
      *     allowed object is
-     *     {@link FormObj }
+     *     {@link String }
      *     
      */
-    public void setForm(FormObj value) {
-        this.form = value;
+    public void setUsername(String value) {
+        this.username = value;
     }
 
 }

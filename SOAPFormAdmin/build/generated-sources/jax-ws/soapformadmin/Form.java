@@ -27,44 +27,56 @@ public interface Form {
 
     /**
      * 
-     * @param formId
-     * @return
-     *     returns soapformadmin.FormObj
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "get", targetNamespace = "http://formAPI/", className = "soapformadmin.Get")
-    @ResponseWrapper(localName = "getResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.GetResponse")
-    @Action(input = "http://formAPI/Form/getRequest", output = "http://formAPI/Form/getResponse")
-    public FormObj get(
-        @WebParam(name = "formId", targetNamespace = "")
-        int formId);
-
-    /**
-     * 
      * @param form
+     * @param username
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "create", targetNamespace = "http://formAPI/", className = "soapformadmin.Create")
-    @ResponseWrapper(localName = "createResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.CreateResponse")
-    @Action(input = "http://formAPI/Form/createRequest", output = "http://formAPI/Form/createResponse")
-    public String create(
+    @RequestWrapper(localName = "add", targetNamespace = "http://formAPI/", className = "soapformadmin.Add")
+    @ResponseWrapper(localName = "addResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.AddResponse")
+    @Action(input = "http://formAPI/Form/addRequest", output = "http://formAPI/Form/addResponse")
+    public String add(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
         @WebParam(name = "form", targetNamespace = "")
         FormObj form);
 
     /**
      * 
+     * @param username
      * @return
      *     returns java.util.List<soapformadmin.FormObj>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAll", targetNamespace = "http://formAPI/", className = "soapformadmin.GetAll")
-    @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.GetAllResponse")
-    @Action(input = "http://formAPI/Form/getAllRequest", output = "http://formAPI/Form/getAllResponse")
-    public List<FormObj> getAll();
+    @RequestWrapper(localName = "getFormsByUsername", targetNamespace = "http://formAPI/", className = "soapformadmin.GetFormsByUsername")
+    @ResponseWrapper(localName = "getFormsByUsernameResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.GetFormsByUsernameResponse")
+    @Action(input = "http://formAPI/Form/getFormsByUsernameRequest", output = "http://formAPI/Form/getFormsByUsernameResponse")
+    public List<FormObj> getFormsByUsername(
+        @WebParam(name = "username", targetNamespace = "")
+        String username);
+
+    /**
+     * 
+     * @param answers
+     * @param id
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "answerForm", targetNamespace = "http://formAPI/", className = "soapformadmin.AnswerForm")
+    @ResponseWrapper(localName = "answerFormResponse", targetNamespace = "http://formAPI/", className = "soapformadmin.AnswerFormResponse")
+    @Action(input = "http://formAPI/Form/answerFormRequest", output = "http://formAPI/Form/answerFormResponse")
+    public String answerForm(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "id", targetNamespace = "")
+        int id,
+        @WebParam(name = "answers", targetNamespace = "")
+        List<QuestionObj> answers);
 
 }
